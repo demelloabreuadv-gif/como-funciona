@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Como funciona o processo — De Mello Abreu Advocacia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --petroleo: #0a3a4a;
+    --petroleo-soft: #1a5a6e;
+    --petroleo-muted: #4a7a8a;
+    --dourado: #c1a874;
+    --dourado-claro: #d4c09a;
+    --dourado-palido: #f5efe3;
+    --creme: #f4f8f9;
+    --creme-escuro: #ddeaee;
+    --branco: #ffffff;
+    --texto-escuro: #0a2a36;
+    --texto-muted: #5a7a86;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--branco);
+    color: var(--texto-escuro);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--petroleo);
+    padding: 80px 40px 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1px solid rgba(193,168,116,0.15);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    border: 1px solid rgba(193,168,116,0.10);
+    pointer-events: none;
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 5vw, 50px);
+    font-weight: 300;
+    color: var(--branco);
+    line-height: 1.2;
+    max-width: 700px;
+    margin: 0 auto 24px;
+  }
+  .hero h1 em { font-style: italic; color: var(--dourado-claro); }
+  .hero-sub {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* ── FRASE ── */
+  .quote-bar {
+    background: var(--dourado-palido);
+    padding: 40px;
+    text-align: center;
+    border-top: 2px solid var(--dourado);
+    border-bottom: 2px solid var(--dourado);
+  }
+  .quote-bar blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(17px, 2.5vw, 23px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--petroleo);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .quote-bar blockquote::before {
+    content: '\201C';
+    font-size: 52px;
+    color: var(--dourado);
+    line-height: 0;
+    vertical-align: -20px;
+    margin-right: 4px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* ── ETAPAS ── */
+  .steps-section {
+    padding: 80px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .sec-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--dourado);
+    text-align: center;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .sec-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 400;
+    color: var(--petroleo);
+    text-align: center;
+    line-height: 1.25;
+    max-width: 600px;
+    margin: 0 auto 60px;
+  }
+  .steps-list {
+    list-style: none;
+    position: relative;
+  }
+  .steps-list::before {
+    content: '';
+    position: absolute;
+    left: 27px;
+    top: 44px;
+    bottom: 44px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--dourado), var(--creme-escuro));
+  }
+  .step {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 52px;
+    align-items: flex-start;
+  }
+  .step:last-child { margin-bottom: 0; }
+  .dot {
+    min-width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .dot span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1;
+  }
+  .dot-1 { background: var(--petroleo); border: 2px solid var(--dourado); }
+  .dot-1 span { color: var(--dourado); }
+  .dot-2 { background: var(--dourado-palido); border: 2px solid var(--dourado); }
+  .dot-2 span { color: var(--petroleo); }
+  .dot-3 { background: var(--creme); border: 2px solid var(--petroleo-muted); }
+  .dot-3 span { color: var(--petroleo); }
+  .dot-4 { background: var(--petroleo); border: 2px solid var(--dourado); }
+  .dot-4 span { color: var(--dourado); }
+
+  .step-body { flex: 1; padding-top: 6px; }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .b-free    { background: rgba(10,58,74,0.08); color: var(--petroleo); }
+  .b-paid    { background: rgba(193,168,116,0.22); color: #7a5c20; }
+  .b-process { background: var(--creme-escuro); color: var(--petroleo-soft); }
+  .b-result  { background: rgba(10,58,74,0.08); color: var(--petroleo); }
+
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--petroleo);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .step-text {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--texto-muted);
+    line-height: 1.8;
+    max-width: 580px;
+  }
+  .note {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: var(--creme);
+    border-left: 3px solid var(--dourado);
+    font-size: 13px;
+    color: var(--petroleo-muted);
+    line-height: 1.7;
+    max-width: 580px;
+  }
+
+  /* ── DIFERENCIAIS ── */
+  .diff-section {
+    background: var(--petroleo);
+    padding: 64px 40px;
+  }
+  .diff-section .sec-label { color: var(--dourado); }
+  .diff-section .sec-title { color: var(--branco); margin-bottom: 48px; }
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .diff-card {
+    padding: 28px 24px;
+    border: 1px solid rgba(193,168,116,0.25);
+    border-top: 3px solid var(--dourado);
+  }
+  .diff-icon { width: 36px; height: 36px; margin-bottom: 16px; opacity: 0.8; display: block; }
+  .diff-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--branco);
+    margin-bottom: 8px;
+  }
+  .diff-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--dourado-palido);
+    padding: 72px 40px;
+    text-align: center;
+    border-top: 2px solid var(--dourado);
+  }
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 400;
+    color: var(--petroleo);
+    line-height: 1.25;
+    max-width: 560px;
+    margin: 12px auto 16px;
+  }
+  .cta-sub {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--texto-muted);
+    margin-bottom: 36px;
+    line-height: 1.7;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--petroleo);
+    color: var(--dourado-claro);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 40px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .cta-btn:hover { background: var(--petroleo-soft); color: var(--dourado); }
+
+  /* ── RESPONSIVO ── */
+  @media (max-width: 600px) {
+    .hero, .quote-bar, .steps-section, .diff-section, .cta-section { padding-left: 24px; padding-right: 24px; }
+    .steps-list::before { left: 21px; }
+    .dot { min-width: 44px; height: 44px; }
+    .step { gap: 20px; }
+    .diff-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="eyebrow">Como funciona o processo</span>
+  <h1>Cada caso recebe atenção <em>exclusiva</em> —<br>do primeiro contato ao resultado</h1>
+  <p class="hero-sub">Não trabalho com volume. Aceito um número restrito de causas por vez, dedicando a cada uma o estudo e a profundidade que ela merece.</p>
+</section>
+
+<!-- FRASE -->
+<div class="quote-bar">
+  <blockquote>Aceito causas complexas que outros devolvem. Não porque são mais arriscadas — mas porque exigem o tipo de estudo que dá sentido ao meu trabalho.</blockquote>
+</div>
+
+<!-- ETAPAS -->
+<section class="steps-section">
+  <span class="sec-label">O processo passo a passo</span>
+  <h2 class="sec-title">Transparência em cada etapa</h2>
+  <ul class="steps-list">
+
+    <li class="step">
+      <div class="dot dot-1"><span>1</span></div>
+      <div class="step-body">
+        <span class="badge b-free">Gratuito</span>
+        <h3 class="step-title">Consulta inicial — você fala, eu ouço</h3>
+        <p class="step-text">O primeiro contato é sempre gratuito. Você me conta o que aconteceu — sem precisar ter documentos em mãos, sem precisar saber se tem direito. Esclareço suas dúvidas iniciais e avalio se o caso se encaixa na minha atuação: erro médico, negativa de plano de saúde, complicação cirúrgica e ações indenizatórias complexas na área da saúde.</p>
+        <div class="note">Não atendo todo tipo de causa. Se o seu caso não for da minha área, serei direta sobre isso — e, sempre que possível, vou indicar o caminho certo.</div>
+      </div>
+    </li>
+
+    <li class="step">
+      <div class="dot dot-2"><span>2</span></div>
+      <div class="step-body">
+        <span class="badge b-paid">Análise cobrada</span>
+        <h3 class="step-title">Análise jurídica aprofundada — um parecer de verdade</h3>
+        <p class="step-text">Se houver base para seguir em frente, realizo uma análise jurídica completa do seu caso. Estudo prontuários, laudos, documentos e histórico com o rigor que causas complexas exigem. Você recebe um parecer claro, honesto e fundamentado — com as chances reais de êxito, a estratégia mais adequada e o que esperar do processo.</p>
+        <div class="note">Esta etapa tem custo porque envolve dedicação técnica real — horas de estudo cuidadoso do seu caso. O parecer é honesto mesmo quando a conclusão é desfavorável, porque você merece tomar uma decisão informada.</div>
+      </div>
+    </li>
+
+    <li class="step">
+      <div class="dot dot-3"><span>3</span></div>
+      <div class="step-body">
+        <span class="badge b-process">Início do processo</span>
+        <h3 class="step-title">Se as chances forem boas, entramos com a ação — juntos</h3>
+        <p class="step-text">Quando a análise aponta perspectivas favoráveis, apresento a proposta para início do processo judicial. Há honorários iniciais para cobrir as despesas do escritório, e a maior parte é cobrada apenas ao final, em caso de êxito. O valor da análise jurídica é descontado neste momento — você não paga duas vezes pelo mesmo trabalho.</p>
+        <div class="note">Isso significa que meu comprometimento com o resultado é o mesmo que o seu. Só ganho de verdade quando você ganha.</div>
+      </div>
+    </li>
+
+    <li class="step">
+      <div class="dot dot-4"><span>4</span></div>
+      <div class="step-body">
+        <span class="badge b-result">Acompanhamento</span>
+        <h3 class="step-title">Você não fica sozinha — em nenhum momento</h3>
+        <p class="step-text">Durante todo o processo, você tem acesso direto a mim — não a um assistente, não a uma equipe impessoal. Cuido pessoalmente de cada fase: documentos, prazos, petições, audiências. Você é informada sobre tudo, com a clareza que merece, do início ao resultado.</p>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="diff-section">
+  <span class="sec-label">Por que é diferente</span>
+  <h2 class="sec-title">Advocacia artesanal</h2>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#c1a874" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <p class="diff-title">Atendimento pessoal</p>
+      <p class="diff-desc">Você fala diretamente com a Dra. Flávia em todas as etapas — sem intermediários.</p>
+    </div>
+    <div class="diff-card">
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#c1a874" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+      <p class="diff-title">Causas complexas</p>
+      <p class="diff-desc">Especializada nos casos que outros escritórios devolvem por exigirem estudo aprofundado.</p>
+    </div>
+    <div class="diff-card">
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#c1a874" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <p class="diff-title">Parecer honesto</p>
+      <p class="diff-desc">Digo a verdade sobre as chances do seu caso, mesmo quando a resposta não é a que você quer ouvir.</p>
+    </div>
+    <div class="diff-card">
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="#c1a874" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <p class="diff-title">100% online</p>
+      <p class="diff-desc">Atendo em todo o Brasil. Você não precisa sair de casa em nenhuma etapa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <span class="sec-label">O primeiro passo</span>
+  <h2 class="cta-title">Comece por uma conversa — é gratuita</h2>
+  <p class="cta-sub">Sem compromisso. Sem burocracia. Você decide se quer seguir em frente.</p>
+  <a href="https://wa.me/5551994463579" class="cta-btn" target="_blank">Falar com a Dra. Flávia</a>
+</section>
+
+</body>
+</html>
